@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-brand-beige text-brand-forest antialiased overflow-x-hidden selection:bg-brand-leaf/20 selection:text-brand-forest transition-colors duration-500;
+    font-family: 'Outfit', 'Inter', sans-serif;
+  }
+}
+
+/* Custom Utilities for Premium Visuals */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glassmorphism-dark {
+  background: rgba(19, 46, 32, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(19, 46, 32, 0.05);
+}
+
+/* Soft shadow design system */
+.shadow-premium {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03), 
+              0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.shadow-premium-hover {
+  box-shadow: 0 10px 40px rgba(19, 46, 32, 0.06), 
+              0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+/* Custom scroll bar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FDFBF7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4BCA8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8D5A38;
+}
+
+/* Base custom classes for animated gradients */
+.bg-gradient-eco {
+  background: linear-gradient(135deg, #FAF8F5 0%, #F5F1E6 100%);
+}
+
+.bg-gradient-forest {
+  background: linear-gradient(135deg, #132E20 0%, #1D4530 100%);
+}
+
+.bg-gradient-leaf {
+  background: linear-gradient(135deg, #3E8E41 0%, #66BB6A 100%);
+}
+
+/* Infinite scrolling marquee for trusted clients */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
