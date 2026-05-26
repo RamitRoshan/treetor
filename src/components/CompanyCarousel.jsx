@@ -3,11 +3,12 @@ import React from 'react';
 const companies = [
   { name: 'Jigyasu', className: 'font-black tracking-tight text-xl font-sans' },
   { name: 'BookMyNandi', className: 'font-semibold tracking-wide text-base md:text-lg italic font-sans' },
-  { name: 'Gomaxindustries.', className: 'font-bold tracking-normal text-lg md:text-xl font-mono' },
+  { name: 'Gomaxindustries', className: 'font-bold tracking-normal text-lg md:text-xl font-mono' },
   { name: 'AuriaEngineering', className: 'font-light tracking-widest text-base md:text-lg uppercase font-sans' },
   { name: 'MultiplyingBricks', className: 'font-extrabold tracking-tighter text-xl font-sans' },
   { name: 'Folkstrot', className: 'font-bold tracking-wider text-lg md:text-xl font-sans' },
   { name: 'Oshopodha', className: 'font-semibold tracking-tight text-lg md:text-xl font-sans' },
+  { name: 'NewsDerby', className: 'font-semibold tracking-wide text-base md:text-lg italic font-sans' },
   { name: 'Allied web design & software', className: 'font-light tracking-wide text-xs md:text-sm uppercase font-sans' }
 ];
 
