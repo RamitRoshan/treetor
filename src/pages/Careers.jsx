@@ -107,7 +107,7 @@ export default function Careers() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="glassmorphism dark:glassmorphism-dark p-6 rounded-[2rem] border border-brand-forest/10 dark:border-white/10 shadow-premium mb-16 relative z-10"
+          className="bg-white/40 dark:bg-brand-forest-light/30 backdrop-blur-md p-6 rounded-[2rem] border border-brand-forest/10 dark:border-white/10 shadow-premium mb-16 relative z-10"
         >
           <div className="flex flex-col gap-6">
             {/* Search Bar */}
@@ -190,7 +190,7 @@ export default function Careers() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="group relative bg-white/40 dark:bg-brand-forest-light/40 backdrop-blur-sm border border-brand-forest/5 dark:border-white/10 rounded-3xl p-6 shadow-premium transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(62,142,65,0.15)] dark:hover:shadow-[0_20px_40px_rgba(62,142,65,0.08)] overflow-hidden"
+                    className="group relative bg-white/40 dark:bg-brand-forest-light/40 backdrop-blur-sm border border-brand-forest/5 dark:border-white/10 rounded-3xl p-6 shadow-premium hover:shadow-[0_20px_40px_rgba(0,0,0,0.03),_0_0_30px_rgba(244,63,94,0.32)] dark:hover:shadow-[0_20px_40px_rgba(0,0,0,0.25),_0_0_35px_rgba(244,63,94,0.28)] hover:border-rose-500 dark:hover:border-rose-400/90 hover:scale-[1.025] transition-all duration-500 ease-out flex flex-col justify-between text-left overflow-hidden"
                   >
                     {/* Hover Glow Effect */}
                     <div className="absolute inset-0 bg-gradient-to-br from-brand-leaf/0 via-brand-leaf/0 to-brand-leaf/5 dark:to-brand-leaf/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -237,7 +237,7 @@ export default function Careers() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="glassmorphism dark:glassmorphism-dark p-12 rounded-[2rem] border border-brand-forest/10 dark:border-white/10 text-center relative z-10"
+              className="bg-white/40 dark:bg-brand-forest-light/30 backdrop-blur-md p-12 rounded-[2rem] border border-brand-forest/10 dark:border-white/10 text-center relative z-10"
             >
               <div className="w-20 h-20 mx-auto rounded-full bg-brand-forest/5 dark:bg-white/5 flex items-center justify-center mb-6">
                 <Frown className="w-10 h-10 text-brand-forest/40 dark:text-brand-beige/40" />
