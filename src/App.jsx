@@ -6,6 +6,7 @@ import Services from './components/Services';
 import AboutUs from './components/AboutUs';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -55,6 +56,9 @@ export default function App() {
 
       {/* Contact Us Section */}
       <Contact />
+
+      {/* Footer Section */}
+      <Footer />
     </div>
   );
 }
