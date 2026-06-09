@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Leaf, Cpu, Sparkles } from 'lucide-react';
+import { ArrowRight, Leaf, Cpu, Sparkles, Briefcase } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 export default function Hero() {
@@ -106,6 +107,13 @@ export default function Hero() {
             >
               Explore Services
             </button>
+            <Link
+              to="/careers"
+              target="_blank"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-white/50 hover:bg-white dark:bg-brand-forest-light/40 dark:hover:bg-brand-forest-light dark:text-brand-beige text-brand-forest text-sm font-semibold border border-brand-forest/10 dark:border-brand-beige/10 rounded-full shadow-premium transition-all duration-300 hover:shadow-premium-hover hover:-translate-y-0.5 backdrop-blur-sm"
+            >
+              Careers
+            </Link>
           </motion.div>
         </div>
 

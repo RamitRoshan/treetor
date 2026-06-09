@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import CompanyCarousel from './components/CompanyCarousel';
-import Services from './components/Services';
-import AboutUs from './components/AboutUs';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Home from './pages/Home';
+import Careers from './pages/Careers';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -35,30 +31,18 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-brand-beige text-brand-forest dark:bg-brand-forest dark:text-brand-beige transition-colors duration-500 overflow-x-hidden selection:bg-brand-leaf/20 selection:text-brand-forest">
-      {/* Sticky Navigation Bar */}
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+    <Router>
+      <div className="relative min-h-screen bg-brand-beige text-brand-forest dark:bg-brand-forest dark:text-brand-beige transition-colors duration-500 overflow-x-hidden selection:bg-brand-leaf/20 selection:text-brand-forest">
+        {/* Sticky Navigation Bar */}
+        <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
-      {/* Hero Section */}
-      <Hero />
+        {/* Routes */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/careers" element={<Careers />} />
+        </Routes>
 
-      {/* Company Carousel */}
-      <CompanyCarousel />
-
-      {/* Services Section */}
-      <Services />
-
-      {/* About Us Section */}
-      <AboutUs />
-
-      {/* Testimonials Section */}
-      <Testimonials />
-
-      {/* Contact Us Section */}
-      <Contact />
-
-      {/* Footer Section */}
-      <Footer />
-    </div>
+      </div>
+    </Router>
   );
 }

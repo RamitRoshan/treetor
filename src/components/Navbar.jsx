@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight, Sun, Moon } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 const navLinks = [
@@ -9,12 +10,15 @@ const navLinks = [
   { name: 'About Us', href: 'about' },
   { name: 'Testimonials', href: 'testimonials' },
   { name: 'Contact Us', href: 'contact' },
+  { name: 'Careers', href: 'careers' }
+
 ];
 
 export default function Navbar({ darkMode, toggleDarkMode }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,71 +49,74 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
   }, []);
 
   const handleNavClick = (e, id) => {
-    e.preventDefault();
-    setIsOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80; // height of sticky navbar
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
+    if (location.pathname === '/') {
+      e.preventDefault();
+      setIsOpen(false);
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 80; // height of sticky navbar
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      setIsOpen(false);
     }
   };
 
   return (
     <>
       <motion.nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'backdrop-blur-md bg-brand-beige/85 dark:bg-brand-forest/85 border-b border-brand-beige-dark/50 dark:border-brand-forest-light/50 py-3 shadow-premium' 
-            : 'bg-transparent py-5'
-        }`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
+          ? 'backdrop-blur-md bg-brand-beige/85 dark:bg-brand-forest/85 border-b border-brand-beige-dark/50 dark:border-brand-forest-light/50 py-3 shadow-premium'
+          : 'bg-transparent py-5'
+          }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
-          <a 
-            href="#home" 
+          <Link
+            to="/"
             onClick={(e) => handleNavClick(e, 'home')}
             className="flex items-center gap-2 group focus:outline-none"
           >
-            <img 
-              src={`${logo}?v=1.0.1`} 
-              alt="Treetor Logo" 
+            <img
+              src={`${logo}?v=1.0.1`}
+              alt="Treetor Logo"
               className="h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105 dark:drop-shadow-[0_2px_10px_rgba(255,255,255,0.18)]"
             />
-          </a>
+          </Link>
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={`#${link.href}`}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`relative text-sm font-medium tracking-wide transition-colors duration-200 focus:outline-none ${
-                  activeSection === link.href
-                    ? 'text-brand-leaf font-semibold'
-                    : 'text-brand-forest/70 dark:text-brand-beige/70 hover:text-brand-forest dark:hover:text-brand-beige'
-                }`}
+                to={link.href === 'careers' ? '/careers' : `/#${link.href}`}
+                onClick={link.href === 'careers' ? undefined : (e) => handleNavClick(e, link.href)}
+                target={link.href === 'careers' ? '_blank' : undefined}
+                className={`relative text-sm font-medium tracking-wide transition-colors duration-200 focus:outline-none ${activeSection === link.href && location.pathname === '/'
+                  ? 'text-brand-leaf font-semibold'
+                  : 'text-brand-forest/70 dark:text-brand-beige/70 hover:text-brand-forest dark:hover:text-brand-beige'
+                  }`}
               >
                 {link.name}
-                {activeSection === link.href && (
+                {activeSection === link.href && location.pathname === '/' && (
                   <motion.span
                     className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-leaf rounded-full"
                     layoutId="activeIndicator"
                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                   />
                 )}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -141,14 +148,14 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
             </motion.button>
 
             {/* Contact Button */}
-            <a
-              href="#contact"
+            <Link
+              to="/#contact"
               onClick={(e) => handleNavClick(e, 'contact')}
               className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 bg-brand-forest hover:bg-brand-forest-light dark:bg-brand-beige dark:hover:bg-brand-beige-dark text-brand-beige dark:text-brand-forest text-xs font-semibold uppercase tracking-wider rounded-full shadow-premium transition-all duration-300 hover:shadow-premium-hover hover:-translate-y-0.5"
             >
               Get In Touch
               <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Actions (Theme Toggle + Menu Trigger) */}
@@ -201,27 +208,27 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
             >
               <div className="px-6 py-6 flex flex-col gap-5">
                 {navLinks.map((link) => (
-                  <a
+                  <Link
                     key={link.name}
-                    href={`#${link.href}`}
-                    onClick={(e) => handleNavClick(e, link.href)}
-                    className={`text-lg font-medium py-1 transition-colors duration-200 ${
-                      activeSection === link.href
-                        ? 'text-brand-leaf font-bold pl-2 border-l-2 border-brand-leaf'
-                        : 'text-brand-forest/80 dark:text-brand-beige/80 hover:text-brand-forest dark:hover:text-brand-beige'
-                    }`}
+                    to={link.href === 'careers' ? '/careers' : `/#${link.href}`}
+                    onClick={link.href === 'careers' ? () => setIsOpen(false) : (e) => handleNavClick(e, link.href)}
+                    target={link.href === 'careers' ? '_blank' : undefined}
+                    className={`text-lg font-medium py-1 transition-colors duration-200 ${activeSection === link.href && location.pathname === '/'
+                      ? 'text-brand-leaf font-bold pl-2 border-l-2 border-brand-leaf'
+                      : 'text-brand-forest/80 dark:text-brand-beige/80 hover:text-brand-forest dark:hover:text-brand-beige'
+                      }`}
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 ))}
-                <a
-                  href="#contact"
+                <Link
+                  to="/#contact"
                   onClick={(e) => handleNavClick(e, 'contact')}
                   className="mt-2 inline-flex items-center justify-center gap-2 w-full py-3.5 bg-brand-forest hover:bg-brand-forest-light dark:bg-brand-beige dark:hover:bg-brand-beige-dark text-brand-beige dark:text-brand-forest text-sm font-semibold uppercase tracking-wider rounded-full shadow-premium transition-all duration-300"
                 >
                   Get In Touch
                   <ArrowUpRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </motion.div>
           )}
