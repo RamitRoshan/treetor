@@ -2,8 +2,8 @@ import React from 'react';
 
 const companies = [
   { name: 'Jigyasu', className: 'font-black tracking-tight text-xl font-sans' },
-  { name: 'BookMyNandi', className: 'font-semibold tracking-wide text-base md:text-lg italic font-sans' },
-  { name: 'Gomaxindustries', className: 'font-bold tracking-normal text-lg md:text-xl font-mono' },
+  { name: 'BookMyNandi', isImage: true, src: '/nandi.png', alt: 'BookMyNandi logo' },
+  { name: 'Gomaxindustries', isImage: true, src: '/gomax.png', alt: 'Gomaxindustries logo' },
   { name: 'AuriaEngineering', className: 'font-light tracking-widest text-base md:text-lg uppercase font-sans' },
   { name: 'MultiplyingBricks', className: 'font-extrabold tracking-tighter text-xl font-sans' },
   { name: 'Folkstrot', className: 'font-bold tracking-wider text-lg md:text-xl font-sans' },
@@ -27,9 +27,17 @@ export default function CompanyCarousel() {
         <div className="flex items-center gap-6 md:gap-10 py-1.5 animate-marquee hover:[animation-play-state:paused]">
           {duplicatedCompanies.map((company, index) => (
             <React.Fragment key={index}>
-              <span className={`text-brand-forest/45 hover:text-brand-leaf dark:text-brand-beige/40 dark:hover:text-brand-leaf-light hover:scale-105 transition-all duration-300 cursor-default select-none whitespace-nowrap dark:hover:drop-shadow-[0_0_8px_rgba(102,187,106,0.35)] hover:drop-shadow-[0_0_8px_rgba(62,142,65,0.25)] ${company.className}`}>
-                {company.name}
-              </span>
+              {company.isImage ? (
+                <img
+                  src={company.src}
+                  alt={company.alt}
+                  className="h-10 md:h-12 w-auto object-contain grayscale mix-blend-multiply dark:invert dark:mix-blend-screen opacity-60 hover:opacity-100 dark:opacity-50 dark:hover:opacity-100 hover:scale-105 transition-all duration-300 cursor-default select-none dark:hover:drop-shadow-[0_0_8px_rgba(102,187,106,0.35)] hover:drop-shadow-[0_0_8px_rgba(62,142,65,0.25)]"
+                />
+              ) : (
+                <span className={`text-brand-forest/45 hover:text-brand-leaf dark:text-brand-beige/40 dark:hover:text-brand-leaf-light hover:scale-105 transition-all duration-300 cursor-default select-none whitespace-nowrap dark:hover:drop-shadow-[0_0_8px_rgba(102,187,106,0.35)] hover:drop-shadow-[0_0_8px_rgba(62,142,65,0.25)] ${company.className}`}>
+                  {company.name}
+                </span>
+              )}
               <span className="text-brand-leaf/30 dark:text-brand-leaf-light/35 text-xs select-none mx-2 md:mx-4">•</span>
             </React.Fragment>
           ))}
