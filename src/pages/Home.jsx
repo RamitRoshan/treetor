@@ -5,6 +5,7 @@ import CompanyCarousel from '../components/CompanyCarousel';
 import Services from '../components/Services';
 import AboutUs from '../components/AboutUs';
 import Testimonials from '../components/Testimonials';
+import VideoTestimonials from '../components/VideoTestimonials';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
@@ -41,6 +42,7 @@ export default function Home() {
       <Services />
       <AboutUs />
       <Testimonials />
+      <VideoTestimonials />
       <Contact />
       <Footer />
     </>

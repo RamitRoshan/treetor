@@ -85,3 +85,11 @@
   animation: marquee 35s linear infinite;
 }
 
+/* Hide scrollbar for carousel but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
