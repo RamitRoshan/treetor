@@ -6,6 +6,7 @@
   html {
     scroll-behavior: smooth;
   }
+
   body {
     @apply bg-brand-beige text-brand-forest antialiased overflow-x-hidden selection:bg-brand-leaf/20 selection:text-brand-forest transition-colors duration-500;
     font-family: 'Outfit', 'Inter', sans-serif;
@@ -29,13 +30,13 @@
 
 /* Soft shadow design system */
 .shadow-premium {
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03), 
-              0 1px 3px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03),
+    0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
 .shadow-premium-hover {
-  box-shadow: 0 10px 40px rgba(19, 46, 32, 0.06), 
-              0 1px 3px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 10px 40px rgba(19, 46, 32, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
 /* Custom scroll bar */
@@ -74,6 +75,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -87,9 +89,12 @@
 
 /* Hide scrollbar for carousel but keep functionality */
 .hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
+
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
