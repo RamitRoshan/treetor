@@ -2,11 +2,11 @@ import React from 'react';
 
 const companies = [
   { name: 'Jigyasu', isImage: true, src: '/jigyasu.png', alt: 'Jigyasu logo', imgClass: 'h-10 md:h-12 hover:scale-105 mix-blend-multiply dark:invert dark:mix-blend-screen' },
-  { name: 'BookMyNandi', isImage: true, src: '/nandi.png', alt: 'BookMyNandi logo', imgClass: 'h-10 md:h-12 hover:scale-105 mix-blend-multiply dark:invert dark:mix-blend-screen' },
+  { name: 'BookMyNandi', isImage: true, src: '/nandi1.png', alt: 'BookMyNandi logo', imgClass: 'h-10 md:h-12 hover:scale-105 invert mix-blend-multiply dark:invert-0 dark:mix-blend-screen' },
   { name: 'Gomaxindustries', isImage: true, src: '/gomax.png', alt: 'Gomaxindustries logo', imgClass: 'h-10 md:h-12 hover:scale-105 mix-blend-multiply dark:invert dark:mix-blend-screen' },
   { name: 'AuriaEngineering', isImage: true, src: '/AuriaEngineering.png', alt: 'AuriaEngineering logo', imgClass: 'h-10 md:h-12 scale-[3] md:scale-[3.5] hover:scale-[3.1] md:hover:scale-[3.6] mix-blend-multiply dark:invert dark:mix-blend-screen' },
   { name: 'MultiplyingBricks', className: 'font-extrabold tracking-tighter text-xl font-sans' },
-  { name: 'Folkstrot', isImage: true, src: '/folkstrot.png', alt: 'Folkstrot logo', imgClass: 'h-12 md:h-16 hover:scale-105 mix-blend-multiply dark:invert dark:mix-blend-screen' },
+  { name: 'Folkstrot', isImage: true, src: '/folkstrot1.png', alt: 'Folkstrot logo', imgClass: 'h-10 md:h-12 scale-[3] md:scale-[3.5] hover:scale-[3.1] md:hover:scale-[3.6] mix-blend-multiply dark:invert dark:mix-blend-screen' },
   { name: 'Oshopodha', className: 'font-semibold tracking-tight text-lg md:text-xl font-sans' },
   { name: 'NewsDerby', className: 'font-semibold tracking-wide text-base md:text-lg italic font-sans' },
   { name: 'Allied web design & software', className: 'font-light tracking-wide text-xs md:text-sm uppercase font-sans' }
