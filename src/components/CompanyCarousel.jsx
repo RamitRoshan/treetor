@@ -1,12 +1,12 @@
 import React from 'react';
 
 const companies = [
-  { name: 'Jigyasu', isImage: true, src: '/jigyasu.png', alt: 'Jigyasu logo', imgClass: 'h-10 md:h-12 hover:scale-105 mix-blend-multiply dark:invert dark:mix-blend-screen' },
-  { name: 'BookMyNandi', isImage: true, src: '/nandi1.png', alt: 'BookMyNandi logo', imgClass: 'h-10 md:h-12 hover:scale-105 invert mix-blend-multiply dark:invert-0 dark:mix-blend-screen' },
-  { name: 'Gomaxindustries', isImage: true, src: '/gomax.png', alt: 'Gomaxindustries logo', imgClass: 'h-10 md:h-12 hover:scale-105 mix-blend-multiply dark:invert dark:mix-blend-screen' },
-  { name: 'AuriaEngineering', isImage: true, src: '/AuriaEngineering.png', alt: 'AuriaEngineering logo', imgClass: 'h-10 md:h-12 scale-[3] md:scale-[3.5] hover:scale-[3.1] md:hover:scale-[3.6] mix-blend-multiply dark:invert dark:mix-blend-screen' },
+  { name: 'Jigyasu', isImage: true, src: '/jigyasu.png', alt: 'Jigyasu logo', imgClass: 'h-10 md:h-12 hover:scale-105' },
+  { name: 'BookMyNandi', isImage: true, src: '/nandi1.png', alt: 'BookMyNandi logo', imgClass: 'h-10 md:h-12 hover:scale-105' },
+  { name: 'Gomaxindustries', isImage: true, src: '/gomax.png', alt: 'Gomaxindustries logo', imgClass: 'h-10 md:h-12 hover:scale-105' },
+  { name: 'AuriaEngineering', isImage: true, src: '/AuriaEngineering.png', alt: 'AuriaEngineering logo', imgClass: 'h-10 md:h-12 scale-[3] md:scale-[3.5] hover:scale-[3.1] md:hover:scale-[3.6]' },
   { name: 'MultiplyingBricks', className: 'font-extrabold tracking-tighter text-xl font-sans' },
-  { name: 'Folkstrot', isImage: true, src: '/folkstrot1.png', alt: 'Folkstrot logo', imgClass: 'h-10 md:h-12 scale-[3] md:scale-[3.5] hover:scale-[3.1] md:hover:scale-[3.6] mix-blend-multiply dark:invert dark:mix-blend-screen' },
+  { name: 'Folkstrot', isImage: true, src: '/folkstrot1.png', alt: 'Folkstrot logo', imgClass: 'h-10 md:h-12 scale-[3] md:scale-[3.5] hover:scale-[3.1] md:hover:scale-[3.6]' },
   { name: 'Oshopodha', className: 'font-semibold tracking-tight text-lg md:text-xl font-sans' },
   { name: 'NewsDerby', className: 'font-semibold tracking-wide text-base md:text-lg italic font-sans' },
   { name: 'Allied web design & software', className: 'font-light tracking-wide text-xs md:text-sm uppercase font-sans' }
@@ -31,7 +31,7 @@ export default function CompanyCarousel() {
                 <img 
                   src={company.src} 
                   alt={company.alt}
-                  className={`w-auto object-contain grayscale opacity-60 hover:opacity-100 dark:opacity-50 dark:hover:opacity-100 transition-all duration-300 cursor-default select-none dark:hover:drop-shadow-[0_0_8px_rgba(102,187,106,0.35)] hover:drop-shadow-[0_0_8px_rgba(62,142,65,0.25)] ${company.imgClass}`}
+                  className={`w-auto object-contain hover:opacity-100 transition-all duration-300 cursor-default select-none dark:hover:drop-shadow-[0_0_8px_rgba(102,187,106,0.35)] hover:drop-shadow-[0_0_8px_rgba(62,142,65,0.25)] ${company.imgClass}`}
                 />
               ) : (
                 <span className={`text-brand-forest/45 hover:text-brand-leaf dark:text-brand-beige/40 dark:hover:text-brand-leaf-light hover:scale-105 transition-all duration-300 cursor-default select-none whitespace-nowrap dark:hover:drop-shadow-[0_0_8px_rgba(102,187,106,0.35)] hover:drop-shadow-[0_0_8px_rgba(62,142,65,0.25)] ${company.className}`}>
