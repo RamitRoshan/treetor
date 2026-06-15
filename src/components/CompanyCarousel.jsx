@@ -5,7 +5,7 @@ const companies = [
   { name: 'BookMyNandi', isImage: true, src: '/nandi1.png', alt: 'BookMyNandi logo', imgClass: 'h-10 md:h-12 hover:scale-105' },
   { name: 'Gomaxindustries', isImage: true, src: '/gomax.png', alt: 'Gomaxindustries logo', imgClass: 'h-10 md:h-12 hover:scale-105' },
   { name: 'AuriaEngineering', isImage: true, src: '/AuriaEngineering.png', alt: 'AuriaEngineering logo', imgClass: 'h-10 md:h-12 scale-[3] md:scale-[3.5] hover:scale-[3.1] md:hover:scale-[3.6]' },
-  { name: 'MultiplyingBricks', className: 'font-extrabold tracking-tighter text-xl font-sans' },
+  { name: 'MultiplyingBrics', isImage: true, src: '/MultiplyingBrics.png', alt: 'MultiplyingBrics logo', imgClass: 'h-10 md:h-12 scale-[1.8] md:scale-[2] hover:scale-[1.9] md:hover:scale-[2.1]' },
   { name: 'Folkstrot', isImage: true, src: '/folkstrot1.png', alt: 'Folkstrot logo', imgClass: 'h-10 md:h-12 scale-[3] md:scale-[3.5] hover:scale-[3.1] md:hover:scale-[3.6]' },
   { name: 'Oshopodha', className: 'font-semibold tracking-tight text-lg md:text-xl font-sans' },
   { name: 'NewsDerby', className: 'font-semibold tracking-wide text-base md:text-lg italic font-sans' },
