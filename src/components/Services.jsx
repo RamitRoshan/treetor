@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Bot, Monitor, Smartphone, Calendar, CheckCircle, ArrowRight } from 'lucide-react';
+import { Bot, Monitor, Smartphone, Calendar, CheckCircle, ArrowRight, Cpu } from 'lucide-react';
 
 const services = [
   {
@@ -42,6 +42,16 @@ const services = [
     iconBg: 'bg-brand-brown/10 text-brand-brown dark:bg-brand-brown/20 dark:text-brand-brown-light',
     hoverBorder: 'hover:border-brand-brown/40',
     buttonText: 'Book Consultation'
+  },
+  {
+    icon: Cpu,
+    title: 'AI Automation',
+    description: 'Automate repetitive business processes and workflows using intelligent AI-powered automation solutions. Improve efficiency, reduce manual effort, and streamline operations with custom automation systems tailored to your business needs.',
+    features: ['Business Process Automation', 'AI-Powered Workflow Optimization', 'CRM & Third-Party Integrations', 'Automated Reporting & Operations'],
+    color: 'from-brand-leaf/10 to-brand-leaf/2 dark:from-brand-leaf/15 dark:to-brand-leaf/5',
+    iconBg: 'bg-brand-leaf/10 text-brand-leaf dark:bg-brand-leaf/20 dark:text-brand-leaf-light',
+    hoverBorder: 'hover:border-brand-leaf/40',
+    buttonText: 'Discuss Project'
   }
 ];
 
