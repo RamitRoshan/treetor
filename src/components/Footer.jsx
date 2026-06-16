@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Send, Mail, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 const quickLinks = [
@@ -149,13 +150,14 @@ export default function Footer() {
               <ul className="space-y-3.5">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
-                    <a
-                      href={`#${link.href}`}
-                      onClick={(e) => handleNavClick(e, link.href)}
+                    <Link
+                      to={link.href === 'careers' ? '/careers' : `/#${link.href}`}
+                      onClick={link.href === 'careers' ? undefined : (e) => handleNavClick(e, link.href)}
+                      target={link.href === 'careers' ? '_blank' : undefined}
                       className="text-brand-forest/70 dark:text-brand-beige/70 text-sm hover:text-brand-leaf dark:hover:text-brand-leaf-light transition-colors duration-200"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
